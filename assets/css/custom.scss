@@ -1,0 +1,62 @@
+---
+---
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+/* Title spacing a bit tighter */
+.archive__item-title {
+  margin-bottom: .25rem;
+}
+
+/* Meta row: date left / cats+tags right */
+.post-list-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: .75rem;
+}
+
+.post-list-meta-row .meta-left time {
+  font-size: .9rem;
+  font-weight: 500;
+  color:rgba(0,0,0,.55); /* 테마에 맞춰 은은하게 */
+  letter-spacing: .01em;
+}
+
+.post-list-meta-row .meta-right {
+  font-size: .85rem;
+  color: rgba(0,0,0,.45);
+  white-space: nowrap;
+}
+
+.post-list-meta-row .meta-right .sep {
+  margin: 0 .4rem;
+  color: rgba(0,0,0,.35);
+}
+
+.post-list-meta-row .meta-right .meta-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0,0,0,.25);
+  padding-bottom: 1px;
+}
+
+.post-list-meta-row .meta-right .meta-link:hover {
+  border-bottom-style: solid;
+  color: rgba(0,0,0,.65);
+}
+
+/* 모바일에선 두 줄로 자연스럽게 쌓이도록 */
+@media (max-width: 640px) {
+  .post-list-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+  }
+  .post-list-meta-row .meta-right {
+    white-space: normal;
+  }
+}
+.page__content {
+  font-size: 0.8rem;
+}

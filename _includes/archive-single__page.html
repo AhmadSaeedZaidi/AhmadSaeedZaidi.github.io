@@ -1,0 +1,32 @@
+{% assign title = post.title | default: post.name %}
+{% assign date_str = post.date | date: "%b %-d, %Y" %}
+{% assign cat_path = site.category_archive.path | default: "/categories/" %}
+{% assign tag_path = site.tag_archive.path | default: "/tags/" %}
+
+<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+  <h2 class="archive__item-title" itemprop="headline">
+    <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+  </h2>
+
+  <div class="post-list-meta-row">
+    <div class="meta-left">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ date_str }}</time>
+    </div>
+
+    <div class="meta-right">
+      {% assign first = true %}
+
+        {%- comment -%} 카테고리 링크: 누적 경로(/a/, /a/b/, /a/b/c/) {%- endcomment -%}
+        {% if post.categories and post.categories != empty %}
+        {% assign base = "" %}
+        {% for cat in post.categories %}
+            {% assign slug = cat | slugify %}
+            {% assign base = base | append: "/" | append: slug %}
+            <a class="meta-link" href="{{ base | append: "/" | relative_url }}">{{ cat }}</a>
+            {% unless forloop.last %}<span class="sep"> / </span>{% endunless %}
+        {% endfor %}
+        {% endif %}
+
+    </div>
+  </div>
+</article>

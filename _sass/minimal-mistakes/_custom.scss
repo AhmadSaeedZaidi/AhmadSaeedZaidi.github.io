@@ -1,0 +1,20 @@
+/* 아카이브 태그 칩 */
+.tag-chips { margin: 1rem 0 2rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.tag-chips .chip {
+  display: inline-flex; align-items: center;
+  padding: .35rem .6rem; border-radius: 999px;
+  background: #f1f3f5; font-size: .85rem; text-decoration: none;
+}
+.tag-chips .chip:hover { background:#e9ecef; }
+.tag-chips .chip .count { margin-left:.35rem; font-size:.75rem; opacity:.7; }
+
+.archive-year { margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom:.25rem; }
+.archive-item { display:flex; align-items:baseline; gap: .8rem; padding:.3rem 0; }
+.archive-item .archive-date { width: 4.2rem; color:#666; font-variant-numeric: tabular-nums; }
+.archive-item .archive-link { font-weight: 600; }
+
+.page__content {
+  font-size: 0.8rem;
+}
+html { font-size: 15px; }   // 전체 스케일 다운
+// 또는 body { font-size: 0.95rem; }
