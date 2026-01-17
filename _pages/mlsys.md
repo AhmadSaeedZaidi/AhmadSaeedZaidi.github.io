@@ -7,7 +7,10 @@ sidebar:
   nav: "mlsys"
 ---
 
-{% assign mlsys_posts = site.categories.mlsys | sort: "date" | reverse %}
-{% for post in mlsys_posts %}
-  {% include archive-single.html type="post" %}
-{% endfor %}
+{% assign mlsys_posts = site.categories.mlsys %}
+{% if mlsys_posts %}
+  {% assign mlsys_posts = mlsys_posts | sort: "date" | reverse %}
+  {% for post in mlsys_posts %}
+    {% include archive-single.html type="post" %}
+  {% endfor %}
+{% endif %}
