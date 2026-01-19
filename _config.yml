@@ -1,7 +1,7 @@
-title: "Minseo’s Dev Blog"
+title: "Ahmad Saeed's Dev Blog"
 description: "ML & MLSys blog and notes"
-url: "https://minseoc03.github.io"
-baseurl: ""   # 레포가 user.github.io면 빈 문자열
+url: "https://ahmadsaeedzaidi.github.io"
+baseurl: ""
 
 # Theme
 remote_theme: "mmistakes/minimal-mistakes"
@@ -84,16 +84,16 @@ sass:
 
 # Author (optional)
 author:
-  name: "Minseo Choi"
+  name: "Ahmad Saeed Zaidi"
   avatar: "/assets/images/profile.png"
-  bio: "Sophomore @ JHU<br>Passionate about ML & MLSys"
+  bio: "Senior @ GIKI<br>ML & MLSys"
   links:
     - label: "GitHub"
       icon: "fab fa-github"
-      url: "https://github.com/minseoc03"
+      url: "https://github.com/AhmadSaeedZaidi"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/minseoc03/"
+      url: "https://www.linkedin.com/in/ahmadsaeedzaidi/"
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:cfi3288@gmail.com"
+      url: "mailto:ahmadsaeedzaidi@gmail.com"
