@@ -24,12 +24,6 @@ plugins:
 
 # Collections
 collections:
-  ml:
-    output: true
-    permalink: /ml/:path/
-  mlsys:
-    output: true
-    permalink: /mlsys/:path/
   about:
     output: true
     permalink: /about/:path/
@@ -44,27 +38,6 @@ defaults:
       author_profile: true
       mathjax: true
       show_excerpts: false
-  - scope:
-      path: ""
-      type: ml
-    values:
-      layout: single
-      sidebar: ml
-      author_profile: true
-  - scope:
-      path: ""
-      type: mlsys
-    values:
-      layout: single
-      sidebar: mlsys
-      author_profile: true
-  - scope:
-      path: ""
-      type: about
-    values:
-      layout: single
-      sidebar: about
-      author_profile: true
 
 # Pagination (optional)
 paginate: 5

@@ -1,38 +1,15 @@
 main:
-  - title: "ML"
-    url: /ml/
-  - title: "MLSys"
-    url: /mlsys/
+  - title: "Math"
+    url: /math/
+  - title: "CUDA"
+    url: /cuda/
   - title: "About"
     url: /about/
 
-ml:
+math:
   - title: "All"
-    url: /ml/
-  - title: "Math"
-    url: /ml/math/
-  - title: "DL Theory"
-    url: /ml/dl_theory/
-  - title: "Object Detection"
-    url: /ml/object_detection/
-  - title: "Transformer"
-    url: /ml/transformer/
-  - title: "Papers"
-    url: /ml/papers/
+    url: /math/
 
-mlsys:
+cuda:
   - title: "All"
-    url: /mlsys/
-  - title: "Compiler"
-    url: /mlsys/compiler/
-  - title: "CUDA"
-    url: /mlsys/cuda/
-  - title: "LLVM"
-    url: /mlsys/llvm/
-  - title: "Quantization"
-    url : /mlsys/quantization/
-  - title: "Inference"
-    url : /mlsys/inference/
-  - title: "Hardware"
-    url : /mlsys/hardware/
-
+    url: /cuda/
