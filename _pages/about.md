@@ -42,3 +42,7 @@ When I'm not working, I am usually:
 ## Contact
 
 The fastest way to reach me is on Discord: **diablo.sama**
+
+## Resume
+
+<embed src="/assets/files/Resume_Ahmad_Saeed_Zaidi.pdf" type="application/pdf" width="100%" height="140px" />
