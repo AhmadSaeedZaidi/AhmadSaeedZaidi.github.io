@@ -14,7 +14,44 @@
 
 <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
 <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
-
 <link rel="icon" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/images/favicon-192x192.png' | relative_url }}">
 
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<script>
+(function() {
+  const html = document.documentElement;
+  const key = 'dark-mode';
+
+  function setDark(enabled) {
+    html.classList.toggle('dark-mode', enabled);
+    localStorage.setItem(key, enabled ? '1' : '0');
+  }
+
+  // Initialize from localStorage or system preference
+  const stored = localStorage.getItem(key);
+  if (stored === '1') {
+    setDark(true);
+  } else if (stored !== '0' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setDark(true);
+  }
+
+  // Inject toggle button into masthead
+  window.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('.greedy-nav');
+    if (!nav) return;
+    let isDark = html.classList.contains('dark-mode');
+    const btn = document.createElement('button');
+    btn.className = 'dark-mode-toggle';
+    btn.setAttribute('aria-label', 'Toggle dark mode');
+    btn.innerHTML = isDark ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    btn.addEventListener('click', function() {
+      isDark = !isDark;
+      setDark(isDark);
+      btn.innerHTML = isDark ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    });
+    nav.appendChild(btn);
+  });
+})();
+</script>

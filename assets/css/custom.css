@@ -1,0 +1,321 @@
+html.dark-mode {
+  --bg: #252a34;
+  --text: #eaeaea;
+  --primary: #00adb5;
+  --border: #39404d;
+  --code-bg: #1f232b;
+  --code-bg-dark: #1a1e26;
+  --form-bg: #1f232b;
+  --footer-bg: #111217;
+  --link-color: #7ecbd3;
+  --masthead-link: #eaeaea;
+}
+
+html.dark-mode body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html.dark-mode a {
+  color: var(--link-color);
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6,
+html.dark-mode strong,
+html.dark-mode .page__content p,
+html.dark-mode .page__content li,
+html.dark-mode .page__lead {
+  color: var(--text);
+}
+
+html.dark-mode .masthead {
+  background-color: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+html.dark-mode .masthead a,
+html.dark-mode .greedy-nav a,
+html.dark-mode .masthead__menu-item a {
+  color: var(--masthead-link);
+}
+
+html.dark-mode .greedy-nav {
+  background-color: var(--bg);
+}
+
+html.dark-mode .greedy-nav .visible-links a::before {
+  background-color: var(--primary);
+}
+
+html.dark-mode .greedy-nav .hidden-links {
+  background-color: var(--bg);
+  border-color: var(--border);
+}
+
+html.dark-mode .greedy-nav .hidden-links a {
+  color: var(--text);
+}
+
+html.dark-mode .greedy-nav .hidden-links a:hover {
+  color: var(--primary);
+}
+
+html.dark-mode .initial-content,
+html.dark-mode .page {
+  background-color: var(--bg);
+}
+
+html.dark-mode .page__footer {
+  background-color: var(--footer-bg);
+  color: var(--text);
+  border-top-color: var(--border);
+}
+
+html.dark-mode .page__footer a {
+  color: var(--link-color);
+}
+
+html.dark-mode .page__footer-copyright {
+  color: var(--text);
+}
+
+html.dark-mode .page__content {
+  color: var(--text);
+}
+
+html.dark-mode pre,
+html.dark-mode code,
+html.dark-mode tt,
+html.dark-mode kbd,
+html.dark-mode samp {
+  background-color: var(--code-bg);
+  color: var(--text);
+}
+
+html.dark-mode .highlight {
+  background-color: var(--code-bg-dark);
+}
+
+html.dark-mode .highlighter-rouge .highlight {
+  background-color: var(--code-bg);
+}
+
+html.dark-mode div.highlighter-rouge,
+html.dark-mode figure.highlight {
+  border-color: var(--border);
+}
+
+html.dark-mode hr {
+  border-color: var(--border);
+}
+
+html.dark-mode table {
+  border-color: var(--border);
+}
+
+html.dark-mode thead {
+  background-color: #2d333b;
+  border-bottom-color: var(--border);
+}
+
+html.dark-mode th {
+  color: var(--text);
+}
+
+html.dark-mode th,
+html.dark-mode td {
+  border-color: var(--border);
+}
+
+html.dark-mode td {
+  border-bottom-color: var(--border);
+}
+
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select {
+  background-color: var(--form-bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html.dark-mode .page__meta,
+html.dark-mode .page__meta-sep {
+  color: var(--text);
+}
+
+html.dark-mode .sidebar {
+  background-color: var(--bg);
+}
+
+html.dark-mode .author__name {
+  color: var(--text);
+}
+
+html.dark-mode .author__bio {
+  color: var(--text);
+}
+
+html.dark-mode .author__urls-wrapper button {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html.dark-mode .author__urls {
+  background-color: var(--bg);
+  border-color: var(--border);
+}
+
+html.dark-mode .author__urls a {
+  color: var(--link-color);
+}
+
+html.dark-mode .page__taxonomy .page__taxonomy-item a {
+  color: var(--text);
+  border-color: var(--border);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+html.dark-mode .archive__item-title a {
+  color: var(--text);
+}
+
+html.dark-mode .archive__item-excerpt {
+  color: var(--text);
+}
+
+html.dark-mode .btn {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+html.dark-mode .btn--primary {
+  background-color: var(--primary);
+}
+
+html.dark-mode .btn--inverse {
+  background-color: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html.dark-mode blockquote {
+  color: var(--text);
+  border-left-color: var(--primary);
+}
+
+html.dark-mode .search-wrapper {
+  background-color: var(--bg);
+}
+
+html.dark-mode .search-content {
+  background-color: var(--bg);
+}
+
+html.dark-mode .search-content .search-index {
+  background-color: var(--bg);
+}
+
+html.dark-mode .search-content .search-index li a {
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+
+html.dark-mode .search-content .search-index li a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+html.dark-mode .search-content .search-input {
+  background-color: var(--form-bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html.dark-mode .search-content .results {
+  background-color: var(--bg);
+}
+
+html.dark-mode .ais-search-box .ais-search-box--input {
+  background-color: var(--form-bg);
+  color: var(--text);
+}
+
+html.dark-mode div.highlighter-rouge table td,
+html.dark-mode div.highlighter-rouge table th {
+  background-color: transparent;
+}
+
+html.dark-mode .greedy-nav .nav-select {
+  background-color: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html.dark-mode .page__comments {
+  background-color: var(--bg);
+}
+
+html.dark-mode .page__comments-form input,
+html.dark-mode .page__comments-form textarea {
+  background-color: var(--form-bg);
+  color: var(--text);
+}
+
+html.dark-mode .page__content .notice {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+html.dark-mode .navicon-lines,
+html.dark-mode .navicon-lines::before,
+html.dark-mode .navicon-lines::after {
+  background-color: var(--masthead-link);
+}
+
+html.dark-mode .greedy-nav__toggle {
+  color: var(--masthead-link);
+}
+
+html.dark-mode .greedy-nav .hidden-links {
+  background-color: var(--bg);
+}
+
+html.dark-mode a:visited {
+  color: var(--link-color);
+}
+
+html.dark-mode .page__content .toc {
+  border-color: var(--border);
+}
+
+html.dark-mode .page__content .toc li a {
+  color: var(--text);
+}
+
+html.dark-mode .page__content .toc li a:hover {
+  color: var(--primary);
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 0.5em;
+  color: inherit;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.dark-mode-toggle:hover {
+  opacity: 1;
+}

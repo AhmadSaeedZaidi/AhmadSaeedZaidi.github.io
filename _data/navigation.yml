@@ -1,8 +1,8 @@
 main:
   - title: "Math"
     url: /math/
-  - title: "CUDA"
-    url: /cuda/
+  - title: "Notation"
+    url: /notation/
   - title: "About"
     url: /about/
 
@@ -13,3 +13,7 @@ math:
 cuda:
   - title: "All"
     url: /cuda/
+
+ml:
+  - title: "All"
+    url: /ml/
