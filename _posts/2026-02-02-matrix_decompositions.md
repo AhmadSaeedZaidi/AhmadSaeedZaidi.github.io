@@ -10,7 +10,7 @@ sidebar:
   nav: "math"
 ---
 
-Factorizing a matrix $A$ into simpler pieces is the backbone of numerical linear algebra. Instead of solving $Ax = b$ directly (costs $O(n^3)$ and you start over if $b$ changes), you factor $A$ once into cheap-to-invert pieces and solve in $O(n^2)$ per right-hand side. Two factorizations dominate: **LU** (triangular × triangular) for square systems, and **QR** (orthogonal × triangular) for least squares and ill-conditioned problems. This post walks through both, from Gaussian elimination up to blocked Householder reflections.
+Factorizing a matrix $A$ into simpler pieces is the backbone of numerical linear algebra. Instead of solving $Ax = b$ directly (costs $O(n^3)$ and you start over if $b$ changes), you factor $A$ once into cheap-to-invert pieces and solve in $O(n^2)$ per right-hand side. Two factorizations dominate: **LU** (triangular × triangular) for square systems, and **QR** (orthogonal × triangular) for least squares and ill-conditioned problems. This post walks through both, from Gaussian elimination up to blocked Householder reflections. Beyond solving linear systems, these decompositions are what make Newton's method practical on matrices: each iteration of multivariate Newton requires solving $J(x_k) \Delta x_k = -f(x_k)$ for the Jacobian $J$, and factorizing $J$ via LU or QR turns the per-iteration cost from $O(n^3)$ down to $O(n^2)$.
 
 # LU Decomposition
 
@@ -56,6 +56,19 @@ a_{11} & a_{12} & a_{13} \\
 $$
 
 The multipliers go directly into $L$ at the positions where they zeroed entries in $A$. This is why $LU$ is essentially just Gaussian elimination with a different accounting.
+
+In pseudocode, the algorithm is:
+
+```
+for k = 1..n-1:
+    for i = k+1..n:
+        m = A[i,k] / A[k,k]          // multiplier
+        A[i,k] = m                    // store in L
+        for j = k+1..n:
+            A[i,j] = A[i,j] - m * A[k,j]  // eliminate
+```
+
+After this, $A$ is overwritten by $U$ in the upper triangle and $L$ (minus the unit diagonal) in the lower triangle.
 
 ## Components
 
@@ -209,7 +222,7 @@ where $e_1 = [1, 0, \dots, 0]^\mathsf{T}$.
 **Intuition:**
 "We take $x$ and add $\|x\| e_1$ (pointing in the direction of the first axis, scaled by $x$'s length). The sum of these two vectors points along the normal of the reflection plane. The sign of $x_1$ ensures we pick the mirror that keeps $v$ away from zero: if $x_1$ is positive, we reflect using $\|x\| e_1$ (same direction); if negative, we use $-\|x\| e_1$ (opposite direction). This avoids $v \approx 0$, which would cause catastrophic cancellation."
 
-After computing $v$, normalize it so $v^\mathsf{T}v = 2$ (this makes the formula $H = I - v v^\mathsf{T}$, saving a multiplication). The reflector can then be applied to any matrix $A$ as:
+After computing $v$, normalize it so $v^\mathsf{T}v = 2$ (i.e. replace $v$ by $\frac{\sqrt{2} \, v}{\|v\|}$). This rescaling makes the scalar factor $\frac{2}{v^\mathsf{T}v} = 1$, collapsing the reflector formula to $H = I - v v^\mathsf{T}$ and saving a multiply per application. The reflector can then be applied to any matrix $A$ as:
 
 $$
 H A = A - v (v^\mathsf{T} A)
@@ -515,6 +528,7 @@ The first column is now $[-3.7417, 0, 0]^\mathsf{T}$: zero below the diagonal, a
 | BLAS level (unblocked) | 2 (panel) | 2 |
 | BLAS level (blocked) | 3 | 3 (WY representation) |
 | Stability w/o pivoting | ❌ exponential growth | ✅ always stable |
+| Use case | Dense $Ax=b$, Newton's method per-iteration solve | Ill-conditioned $Ax=b$, least squares, rank-deficient problems |
 
 # Notes
 
