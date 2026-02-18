@@ -1,6 +1,8 @@
 main:
   - title: "Math"
     url: /math/
+  - title: "ML"
+    url: /ml/
   - title: "Notation"
     url: /notation/
   - title: "About"
