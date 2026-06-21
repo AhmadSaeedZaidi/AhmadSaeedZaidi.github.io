@@ -14,7 +14,7 @@ kramdown:
   hard_wrap: false
   math_engine: mathjax
   syntax_highlighter: rouge
-permalink: /:categories/:title/
+permalink: /:title/
 
 # Plugins (GitHub Pages 허용 목록)
 plugins:

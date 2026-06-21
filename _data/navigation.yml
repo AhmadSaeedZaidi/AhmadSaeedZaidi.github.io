@@ -1,21 +1,42 @@
 main:
-  - title: "Math"
-    url: /math/
   - title: "ML"
     url: /ml/
+  - title: "Math"
+    url: /math/
+  - title: "CUDA"
+    url: /cuda/
   - title: "Notation"
     url: /notation/
   - title: "About"
     url: /about/
 
 math:
-  - title: "All"
+  - title: "All Math Posts"
     url: /math/
-
-cuda:
-  - title: "All"
-    url: /cuda/
+    children:
+      - title: "Newton's Method"
+        url: /newtons_method/
+      - title: "Matrix Decompositions"
+        url: /matrix_decompositions/
 
 ml:
-  - title: "All"
+  - title: "All ML Posts"
     url: /ml/
+    children:
+      - title: "Fitting Linear Lines"
+        url: /fitting_linear_lines/
+      - title: "Gradient Descent"
+        url: /gradient_descent/
+      - title: "Feed-Forward Networks"
+        url: /feed_forward_networks/
+      - title: "Backpropagation"
+        url: /backpropagation/
+
+cuda:
+  - title: "All CUDA Posts"
+    url: /cuda/
+    children:
+      - title: "MHC Theory"
+        url: /mhc-theory/
+      - title: "Optimizing mHC Pre Kernel"
+        url: /optimizing-mhc-pre-kernel/
