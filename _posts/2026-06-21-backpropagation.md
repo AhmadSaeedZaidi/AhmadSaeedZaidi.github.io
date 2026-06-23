@@ -2,7 +2,7 @@
 layout: single
 title: "Backpropagation"
 description: "Computing gradients through a deep network by applying the chain rule from the output back to the input"
-date: 2026-06-21 10:00:00
+date: 2026-06-21
 categories: [ml, math]
 author_profile: false
 show_excerpts: false
