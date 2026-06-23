@@ -10,8 +10,7 @@ sidebar:
   nav: "ml"
 ---
 
-Authors Note:
-I was quite demotivated during this semester... my grades suffered, I didn't score any internships, I had concerning symptoms of chronic intestinal ulcers, and I was unable to keep this blog going. With summer here, I am no longer pursuing corporate work for the time being. I will focus on self development, personal projects, life style improvements, and this blog will take a shift. This post was half-written, I have finished it and it will be followed by one of my greatest accomplishments, a PR on flashinfer (maintainers haven't noticed it yet, but I'm still proud of myself). I have a large backlog of writing, that I need to format (I will likely be taking help from opencode's generous deepseek v4 flash access). I will cover some more ML topics (FFN, MoE, etc.). And generally document my journey towards becoming a better developer and researcher. Hopefully I find sustainable employment in the future.
+
 
 A feed-forward network has thousands to trillions of parameters. Training it means computing the gradient of the loss with respect to every weight and bias, then using gradient descent to update them. Computing each gradient individually with finite differences would cost $O(P^2)$ for $P$ parameters: not feasible. Backpropagation computes all $P$ gradients in $O(P)$ total, using the chain rule and cached intermediate values.
 
@@ -166,3 +165,8 @@ This is why modern networks use ReLU (or its smooth variants GeLU/SiLU): the der
 - Modern frameworks (PyTorch, JAX) implement automatic differentiation: you define the forward pass and the framework traces the computation graph, then builds the backward pass automatically. The gradient formulas are exactly the ones derived above.
 - The same chain rule pattern applies to any architecture: convolutions, attention, skip connections. Each operation defines a forward function and a backward "gradient function" that multiplies the incoming error by the local Jacobian transpose.
 - Skip connections (residual networks) help gradient flow by providing a path where the Jacobian is the identity matrix, so the error signal bypasses the activation derivative entirely.
+
+
+<small> **Small Authors Note:**
+
+I was quite demotivated during this semester... and my grades suffered, I didn't score any internships, I had concerning symptoms from chronic intestinal ulcers, and I was unable to keep this blog going. With summer here, I am no longer pursuing corporate work for the time being. I will focus on self development, personal projects, life style improvements, and this blog will take a shift. This post was half-written, I have finished it and it will be followed by one of my greatest accomplishments, a PR on flashinfer (maintainers haven't noticed it yet, but I'm still proud of myself). I have a large backlog of writing, that I need to format (I will likely be taking help from opencode's generous deepseek v4 flash access). I will cover some more ML topics (FFN, MoE, etc.). And generally document my journey towards becoming a better developer and researcher. Hopefully I find sustainable employment in the future, due to these efforts. </small>
