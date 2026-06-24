@@ -4,6 +4,10 @@ title: "Optimizing the mHC Preprocessing GPU Kernel"
 description: "Register spilling elimination and warp scheduling overlap in FlashInfer's mHC pre-kernel on H100"
 date: 2026-06-24
 categories: cuda
+author_profile: false
+show_excerpts: false
+sidebar:
+  nav: "ml"
 ---
 
 ## The Hyper Connection Preprocessing GPU Kernel Study
