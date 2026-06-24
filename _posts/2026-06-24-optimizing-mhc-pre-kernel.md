@@ -179,10 +179,12 @@ $$
 
 this is why it is called `Bf16x8`.
 
+{% raw %}
 ```cpp
 asm volatile("ld.global.v4.u32 {%0, %1, %2, %3}, [%4];\n" ...)
 asm volatile("st.global.v4.u32 [%4], {%0, %1, %2, %3};\n" ...)
 ```
+{% endraw %}
 Here, we use inline PTX assembly. We force the compiler to load 128-bits of data (in the form of a vector of 8 bf16 values)from the global memory, utilizing the whole bus. this is known as "manual emission".
 
 
