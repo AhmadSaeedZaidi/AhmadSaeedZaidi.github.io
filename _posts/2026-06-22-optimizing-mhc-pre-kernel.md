@@ -9,7 +9,7 @@ categories: cuda
 ## The Hyper Connection Preprocessing GPU Kernel Study
 
 This document summarizes my study of the GPU kernels used for the hyper-connection (mHC) preprocessing in FlashInfer's DeepSeek V4. It covers my exploration of the reference implementation, the GPU optimization techniques involved (like split-K and tiling), and notes on how these kernels work to support the mHC design.
-![diagram](../media/hc_diagram.png) 
+![diagram](/assets/images/inference/hc_diagram.png) 
 
 **Figure 1 — mHC dataflow diagram**
 
@@ -23,7 +23,7 @@ I will be going through my understanding of the [mhc_pre_big_fuse kernel](https:
 
 ### the math operation
 please reference my math document for a better understanding on **why** these operations are needed, and what mHC (manifold-constrained hyper connection) is.
-it is available [here](https://ahmadsaeedzaidi.github.io/mhc-theory/)
+it is available [here](../2026-06-21-mhc-theory)
 
 for now, I will be assuming you have already went through that resource. Here is how the variables in the math document map to the variables in the kernel code:
 
@@ -902,6 +902,3 @@ things I still want to study further:
 - profile the kernel with Nsight Compute and compare local memory transactions between the original path and my H100 path.
 - study the matching `mhc_post` kernel to complete the full equation $X_{l+1} = B_lX_l + C_lF_l(A_lX_l)$.
 - Verify my improvement on other architectures (B100, B200, etc.) and see if the same register/local-memory issue exists there.
-
-
-<small>**author's note:** This optimization was a kind of a one-off, since it was a kernel where I could optimize without frameworks like cuSOLVER, cuDNN, cuBLAS and cuTensor. For now, I will be exploring those, and trying to contribute in those areas, and becoming a better GPU programmer. Next post will be about a separate project, that I am finally cleaning up, and porting to sustainable design patterns. For any flashinfer contributors reading this, please reach out, :<</small>
